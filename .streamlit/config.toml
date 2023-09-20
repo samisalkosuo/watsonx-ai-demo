@@ -1,0 +1,8 @@
+[theme]
+base="light"
+primaryColor="#0f62fe"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor="#e9ebf2"
+textColor = "#000000"
+font = "sans serif"
+serverAddress="0.0.0.0"

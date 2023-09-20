@@ -1,0 +1,30 @@
+= watsonx-ai-demo
+
+IBM watsonx.ai demo application. Based on https://github.ibm.com/Vincent-MP-Nelis/watsonx-demo-car-insurance.
+
+This demo uses IBM Watson Machine Learning library, https://ibm.github.io/watson-machine-learning-sdk/.
+See also https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-python-library for more instructions.
+
+== Usage
+
+* Clone the repository
+* Build container using provided Docker file:
+
+```
+podman build -t watsonx-ai-demo .
+```
+
+
+* Start the container:
+
+```
+podman run -e MODEL_ID=google/flan-ul2 -e IBM_API_KEY=<your-IBM-cloud-apikey> -e PROJECT_ID=<your-project-id> -e IBM_AI_ENDPOINT=<ai-endpoint> -p 8080:8080 wx-demo-car-insurance
+```
+
+* Go to http://localhost:8080 
+
+
+== Modify
+
+== Environment variables
+

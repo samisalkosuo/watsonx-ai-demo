@@ -1,0 +1,59 @@
+/* .stButton{
+    min-width: 210px;
+    color: #000000;
+    background-color: #FFDD00 !important;
+    height: 60px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: Bold;
+    border: none;
+    padding: 0px 24px;
+    line-height: 27px;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center;
+    font-family: 'Arial', cursive !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+} */
+
+/* div.stButton > button:first-child {
+    background-color: #FFDD00;color:white;font-size:20px;height:3em;width:18em;border-radius:10px 10px 10px 10px;
+    } */
+    
+
+    /* #root > div:nth-child(1) > div.withScreencast > div > div > div > section > div.block-container.css-z5fcl4.egzxvld4 > div:nth-child(1) > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(3) > div > button > div > p {
+    .css-dpla7w > p {
+        margin-left: 8px;
+        display: inline-block;
+        line-height: 0;
+        width: 100%;
+        flex-shrink: 0;
+        color: black;
+        min-width: 210px;
+        color: #000000;
+        background-color: #FFDD00 !important;
+        height: 60px;
+        border-radius: 12px;
+        font-size: 24px;
+        font-weight: Bold !important;
+        border: none;
+        padding: 0px 24px;
+        line-height: 27px;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center;
+        font-family: 'Arial', cursive !important;
+        -webkit-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+    } */
+
+#the-title {
+    text-align: center
+    }
+
+img {
+    filter: brightness(120%);
+    filter: contrast(120%);
+    filter: drop-shadow(7px 7px 7px rgb(77, 78, 77));
+    }

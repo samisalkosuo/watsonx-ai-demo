@@ -1,0 +1,77 @@
+
+{
+    "claims": [
+        {
+            "id": 0,
+            "title": "Claim ID: CIC202105505",
+            "image": "app/src/assets/images/claim_0.png",
+            "description": "The insured vehicle, a Tesla Model S, was parked outside on April 15th, 2023 when an unexpected and violent hailstorm struck the area.\n Hailstones of varying sizes, ranging from small pellets to large golf balls, rained down on the vehicle with relentless force. The impact of the hailstones caused extensive damage to the exterior of the vehicle, leaving behind a multitude of dents and dings on the roof, hood, trunk, and all sides.\n The hailstones were so powerful that they shattered the windshield and side windows, resulting in shattered glass fragments scattered throughout the interior of the vehicle. The insured immediately contacted their insurance company to report the incident and initiated the claims process.\n Recognizing the severity of the damage, the insurance company promptly dispatched an experienced auto appraiser to assess the extent of the hail damage.\nThe appraiser meticulously inspected the vehicle, documenting each dent, ding, and broken window. Based on their assessment, the appraiser estimated the cost of repairs, taking into account the need for paintless dent removal, panel replacements, windshield replacement, and window repairs. With the appraisal report in hand, the insured is now filing a comprehensive claim for the necessary repairs.\n Along with the report, the insured is submitting detailed photographs of the damaged vehicle from multiple angles, capturing the extent of the hail damage.\nThe insured understands the importance of providing compelling evidence to support their claim and has meticulously documented the damage. They are also including any additional information or documentation requested by the insurance company. The insured is eagerly awaiting the outcome of their claim, hopeful that the insurance company will process it promptly.\nThey recognize that the repairs required to restore their beloved Tesla Model S to its pre-hailstorm condition will be extensive and costly. However, they have confidence in the insurance company's commitment to providing the necessary coverage and support. Their ultimate goal is to see their vehicle restored to its original beauty and performance, ready to hit the road once again, unaffected by the devastating hailstorm."
+        },
+        {
+            "id": 1,
+            "title": "Claim ID: CIC202108708",
+            "image": "app/src/assets/images/claim_1.png",
+            "description": "The insured vehicle, a Chevrolet Silverado, was involved in a hit and run accident on September 10th, 2023 at 3:30 PM. While parked on Oak Street, another vehicle struck the insured vehicle and fled the scene without providing any information. The insured discovered the damage later and reported the incident to the police. The insured is filing a claim for the repairs and is providing the police report as evidence of the hit and run incident."
+        },
+        {
+            "id": 2,
+            "title": "Claim ID: CIC202123405",
+            "image": "app/src/assets/images/claim_2.png",
+            "description": "The insured vehicle, a Honda Accord, was rear-ended on June 5th, 2023 at the intersection of Elm Street and Maple Avenue. The insured driver was waiting at a red light when another vehicle failed to stop and collided with the rear of the insured vehicle. The accident caused damage to the bumper and trunk of the insured vehicle. The insured exchanged insurance information with the other driver and promptly reported the incident to their insurance company. The insured is filing a claim for the repairs and providing the insurance details of the other party involved."
+        },
+        {
+            "id": 3,
+            "title": "Claim ID: CIC202105895",
+            "image": "app/src/assets/images/claim_2.png",
+            "description": "On August 10th, 2023, the insured vehicle, a Toyota Camry, was involved in a severe accident on the highway. The insured driver was traveling within the speed limit when another vehicle suddenly swerved into their lane, causing a collision. The impact was significant, resulting in extensive damage to both vehicles. The insured driver immediately contacted emergency services and received medical attention at the scene. The insured vehicle sustained damage to the front and rear, including a deployed airbag, crushed hood, and shattered windshield. The insured driver suffered minor injuries and is receiving ongoing medical treatment. The insured has filed a claim with their insurance company, providing the accident details, police report, and medical documentation. The insurance company has initiated an investigation to determine liability and will cover the cost of vehicle repairs and medical expenses."
+        },
+        {
+            "id": 4,
+            "title": "Claim ID: CIC202109875",
+            "image": "app/src/assets/images/claim_1.png",
+            "description": "On May 30th, 2023, heavy rainfall caused severe flooding in the insured's neighborhood. Unfortunately, the insured vehicle, a Chevrolet Silverado, was parked on the street and submerged in floodwaters. The floodwaters reached the interior of the vehicle, damaging the upholstery, electrical components, and engine. The insured promptly contacted their insurance company to report the incident and is filing a claim for the extensive damages. The insurance company has arranged for the vehicle to be towed to an authorized repair facility for assessment and repairs. The insured is providing supporting documentation, including photographs of the flooded vehicle and receipts for any emergency towing or cleanup services. The insurance company will cover the cost of repairs, subject to the terms and conditions of the policy."
+        },
+        {
+            "id": 5,
+            "title": "Claim ID: CIC202103405",
+            "image": "app/src/assets/images/claim_0.png",
+            "description": "The insured vehicle, a BMW 3 Series, was stolen on April 12th, 2023 from the parking lot of the insured's apartment complex on Pine Street. The insured parked the vehicle in the designated spot and discovered it missing the next morning. The insured immediately reported the theft to the police and obtained a police report. The insured is filing a claim for the stolen vehicle and providing the police report as evidence. The insurance company has initiated an investigation into the theft."
+        },
+        {
+            "id": 6,
+            "title": "Claim ID: CIC202105995",
+            "image": "app/src/assets/images/claim_0.png",
+            "description": "While driving on September 8th, 2023, the insured vehicle, a GMC Sierra, collided with a large deer that suddenly darted onto the road. The insured driver was unable to avoid the collision due to the deer's sudden appearance. The impact caused significant damage to the front of the insured vehicle, including a cracked bumper, broken headlights, and dented hood. Thankfully, the insured driver and any passengers were unharmed. The insured immediately contacted their insurance company to report the accident and is filing a claim for the necessary repairs. The insurance company will assess the damages and provide an estimate for the repairs. The insured is cooperating with any requested documentation, such as photographs of the accident scene and a description of the incident. The insurance company will cover the cost of repairs, subject to the terms and deductible of the policy."
+        },
+        {
+            "id": 7,
+            "title": "Claim ID: CIC202109635",
+            "image": "app/src/assets/images/claim_1.png",
+            "description": "On January 15th, 2023, the insured vehicle, a Nissan Altima, was involved in a collision while parked in a shopping mall parking lot. The insured returned to their vehicle to find that another car had struck the rear bumper, causing visible damage. Unfortunately, the responsible party did not leave any contact information. The insured promptly reported the incident to their insurance company and is filing a claim for the necessary repairs. The insurance company has requested a copy of the police report, if available, and the insured is cooperating with any investigation or further information required. An authorized auto repair shop will assess the damages and provide an estimate for the repairs. The insurance company will cover the cost of repairs, subject to the terms and deductible of the policy."
+        },
+        {
+            "id": 8,
+            "title": "Claim ID: CIC202107863",
+            "image": "app/src/assets/images/claim_2.png",
+            "description": "On November 5th, 2023, a fire broke out in the insured's garage, resulting in significant damage to the insured vehicle, a Honda Civic. The insured immediately contacted the fire department, and the fire was extinguished, but not before the vehicle sustained extensive fire damage. The fire damaged the exterior paint, melted parts of the body, and caused smoke and soot damage to the interior. The insured promptly reported the incident to their insurance company and is filing a claim for the repairs. The insurance company has arranged for an assessment of the damages by a qualified auto repair specialist. The insured is providing any necessary documentation, including photographs of the damaged vehicle and a description of the fire incident. The insurance company will cover the cost of repairs or replacement, subject to the terms and conditions of the policy."
+        },
+        {
+            "id": 9,
+            "title": "Claim ID: CIC202105005",
+            "image": "app/src/assets/images/claim_0.png",
+            "description": "The insured vehicle, a Toyota Camry, was parked outside during a severe hailstorm on May 15th, 2023. As a result, the vehicle suffered extensive hail damage, including dents on the roof, hood, and trunk. The insured promptly reported the incident and is filing a claim for the necessary repairs. The estimated cost of repairs has been assessed by an authorized auto repair shop."
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
