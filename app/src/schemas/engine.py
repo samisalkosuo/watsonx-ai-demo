@@ -13,9 +13,9 @@ from ibm_watson_machine_learning.foundation_models.utils.enums import (
 class Engine:
     def __init__(self):
         self._config = Configuration()
-        with open("app/src/assets/data/data.json", "r") as file:
-            json_config = json.load(file)
-        self.claims = json_config["claims"]
+        with open("app/config.json", "r") as file:
+            self.json_config = json.load(file)
+        self.claims = self.json_config["inputData"]
 
     def generateText(self, prompt: str, generate_params: list) -> str:
         model = Model(
@@ -45,12 +45,12 @@ class Engine:
             return None
 
     def __parse_entities(self, string):
-        try:
+        try:            
             entities = {
-                "Car Details": "Not Found",
-                "Location": "Not Found",
-                "Date": "Not Found",
-                "Time of Incident": "Not Found",
+                f'{self.json_config["entity1HeaderText"]}': f'{self.json_config["entity1DefaultValueText"]}',
+                f'{self.json_config["entity2HeaderText"]}': f'{self.json_config["entity2DefaultValueText"]}',
+                f'{self.json_config["entity3HeaderText"]}': f'{self.json_config["entity3DefaultValueText"]}',
+                f'{self.json_config["entity4HeaderText"]}': f'{self.json_config["entity4DefaultValueText"]}',
             }
             lines = string.split(";")
             for line in lines:
@@ -76,8 +76,14 @@ class Engine:
                 GenParams.MIN_NEW_TOKENS: 1,
                 GenParams.MAX_NEW_TOKENS: 50,
             }
-            inputText = f"Read this Insurance claim description and extract the Car make and model, Location of the incident like street and date time if there is any mentioned. If you don't find these details in the description, please fill it as Not Found. input: A car accident occurred on Jan 1st, 2023 at 5pm at the intersection of woodbridge. The insured vehicle, a Honda Civic, was hit by another vehicle that ran a red light. The insured driver, John, was driving within the speed limit and following all traffic rules. The accident resulted in significant damage to the insured vehicle, including a broken bumper and damaged front fender. There were no injuries reported. The insured is filing a claim for the repairs and any necessary medical expenses. output:Car Details: Honda Civic;Location: Woodbridge;Date: Jan 1st, 2023;Time of incident: 5pm. input: The insured vehicle, a Ford RAM, was stolen from Boston on Dec 2nd 2022. The vehicle was parked in a secure parking lot, and all necessary precautions were taken, such as locking the doors and activating the alarm system. The insured immediately reported the theft to the police and obtained a police report. The vehicle had comprehensive insurance coverage, and the insured is filing a claim for the stolen vehicle, including its estimated value, accessories, and personal belongings that were inside the vehicle at the time of theft. output: Car Details: Form RAM;Location: Boston;Date and time: Dec 2nd 2022;Time of Incident: Not Found. input: The insured vehicle, a Tesla model X, was vandalized on march 23rd while parked in front of the insured's residence on Magador Street. The vandalism included scratched paint, broken windows, and damage to the side mirrors. The insured promptly reported the incident to the police and obtained a police report. The insured is filing a claim for the repairs and any necessary replacement parts. The estimated cost of repairs has been assessed by a reputable auto repair shop. output: Car Details: Tesla Model X;Location: Magador Street;Date: march 23rd;Time of Incident: Not Found. input: The insured vehicle, was parked outside during a severe hailstorm. As a result, the vehicle suffered extensive hail damage, including dents on the roof, hood, and trunk. The insured promptly reported the incident and is filing a claim for the necessary repairs. The estimated cost of repairs has been assessed by an authorized auto repair shop. Managed entities: Car Details: Not Found;Location: Parked outside;Date: Not Found;Time of Incident: Not Found. input: While driving on Anthony Street on 1st June, the insured vehicle, a BMW Q1, collided with a large animal (e.g., deer) that suddenly crossed the road. The accident resulted in damage to the front bumper, grille, and headlights. The insured promptly reported the incident and is filing a claim for the repairs. Additionally, the insured sought medical attention for any potential injuries resulting from the collision. output: Car Details: BMW Q1;Location: Anthony Street;Date: 1st June;Time of Incident: Not Found. input: The insured vehicle, caught fire on april 1st due to a mechanical malfunction. The fire resulted in significant damage to the vehicle, including damage to the engine, interior, and exterior. The insured immediately contacted the fire department, and the incident was reported to the police. The insured is filing a claim for the repairs and is providing the fire department report as evidence of the fire incident. output: Car Details: Not Found;Location: Not Found;Date: April 1st, 2023;Time of Incident: Not Found. input: {prompt}. output:"
-            result = self.generateText(inputText,generate_params)
+            inputPrompt = self.json_config["promptEntities"]
+            inputPrompt = inputPrompt.replace("ENTITY1",self.json_config["entity1HeaderText"])
+            inputPrompt = inputPrompt.replace("ENTITY2",self.json_config["entity2HeaderText"])
+            inputPrompt = inputPrompt.replace("ENTITY3",self.json_config["entity3HeaderText"])
+            inputPrompt = inputPrompt.replace("ENTITY4",self.json_config["entity4HeaderText"])
+            inputPrompt = inputPrompt.replace("INPUTTEXT",prompt)
+            #inputText = f"Read this Insurance claim description and extract the Car make and model, Location of the incident like street and date time if there is any mentioned. If you don't find these details in the description, please fill it as Not Found. input: A car accident occurred on Jan 1st, 2023 at 5pm at the intersection of woodbridge. The insured vehicle, a Honda Civic, was hit by another vehicle that ran a red light. The insured driver, John, was driving within the speed limit and following all traffic rules. The accident resulted in significant damage to the insured vehicle, including a broken bumper and damaged front fender. There were no injuries reported. The insured is filing a claim for the repairs and any necessary medical expenses. output: {self.json_config['entity1HeaderText']}: Honda Civic;{self.json_config['entity2HeaderText']}: Woodbridge; {self.json_config['entity3HeaderText']}: Jan 1st, 2023; {self.json_config['entity4HeaderText']}: 5pm. input: The insured vehicle, a Ford RAM, was stolen from Boston on Dec 2nd 2022. The vehicle was parked in a secure parking lot, and all necessary precautions were taken, such as locking the doors and activating the alarm system. The insured immediately reported the theft to the police and obtained a police report. The vehicle had comprehensive insurance coverage, and the insured is filing a claim for the stolen vehicle, including its estimated value, accessories, and personal belongings that were inside the vehicle at the time of theft. output: {self.json_config['entity1HeaderText']}: Ford RAM; {self.json_config['entity2HeaderText']}: Boston; {self.json_config['entity3HeaderText']}: Dec 2nd 2022; {self.json_config['entity4HeaderText']}: Not Found. input: The insured vehicle, a Tesla model X, was vandalized on march 23rd while parked in front of the insured's residence on Magador Street. The vandalism included scratched paint, broken windows, and damage to the side mirrors. The insured promptly reported the incident to the police and obtained a police report. The insured is filing a claim for the repairs and any necessary replacement parts. The estimated cost of repairs has been assessed by a reputable auto repair shop. output: {self.json_config['entity1HeaderText']}: Tesla Model X; {self.json_config['entity2HeaderText']}: Magador Street; {self.json_config['entity3HeaderText']}: march 23rd; {self.json_config['entity4HeaderText']}: Not Found. input: The insured vehicle, was parked outside during a severe hailstorm. As a result, the vehicle suffered extensive hail damage, including dents on the roof, hood, and trunk. The insured promptly reported the incident and is filing a claim for the necessary repairs. The estimated cost of repairs has been assessed by an authorized auto repair shop. Managed entities: {self.json_config['entity1HeaderText']}: Not Found; {self.json_config['entity2HeaderText']}: Parked outside; {self.json_config['entity3HeaderText']}: Not Found; {self.json_config['entity4HeaderText']}: Not Found. input: While driving on Anthony Street on 1st June, the insured vehicle, a BMW Q1, collided with a large animal (e.g., deer) that suddenly crossed the road. The accident resulted in damage to the front bumper, grille, and headlights. The insured promptly reported the incident and is filing a claim for the repairs. Additionally, the insured sought medical attention for any potential injuries resulting from the collision. output: {self.json_config['entity1HeaderText']}: BMW Q1; {self.json_config['entity2HeaderText']}: Anthony Street; {self.json_config['entity3HeaderText']}: 1st June; {self.json_config['entity4HeaderText']}: Not Found. input: The insured vehicle, caught fire on april 1st due to a mechanical malfunction. The fire resulted in significant damage to the vehicle, including damage to the engine, interior, and exterior. The insured immediately contacted the fire department, and the incident was reported to the police. The insured is filing a claim for the repairs and is providing the fire department report as evidence of the fire incident. output: {self.json_config['entity1HeaderText']}: Not Found; {self.json_config['entity2HeaderText']}: Not Found; {self.json_config['entity3HeaderText']}: April 1st, 2023; {self.json_config['entity4HeaderText']}: Not Found. input: {prompt}. output:"
+            result = self.generateText(inputPrompt,generate_params)
         except Exception as e:
             print(e)
             result = None
@@ -97,9 +103,9 @@ class Engine:
                 GenParams.MAX_NEW_TOKENS: 500,
                 GenParams.RANDOM_SEED: 1050
             }
-            inputText = f"Act as a Auto insurance Claim manager and suggest the next steps for this accident claim. input: A car accident occurred on Jan 1st, 2023 at 5pm at the intersection of woodbridge. The insured vehicle, a Honda Civic, was hit by another vehicle that ran a red light. The insured driver, John, was driving within the speed limit and following all traffic rules. The accident resulted in significant damage to the insured vehicle, including a broken bumper and damaged front fender. There were no injuries reported. The insured is filing a claim for the repairs and any necessary medical expenses. output: 1. Make a claim with your insurance company.  2. Provide any paperwork required to substantiate the claim.  3. Contact the insurance company and the covered driver. Keep track of the claim's progress. If more information is required, contact the insured.   When all parties have agreed on a settlement, the claim is closed. input: he insured vehicle, a Ford RAM, was stolen from Boston on Dec 2nd 2022. The vehicle was parked in a secure parking lot, and all necessary precautions were taken, such as locking the doors and activating the alarm system. The insured immediately reported the theft to the police and obtained a police report. The vehicle had comprehensive insurance coverage, and the insured is filing a claim for the stolen vehicle, including its estimated value, accessories, and personal belongings that were inside the vehicle at the time of theft. output: 1. Contact the police to file a police report.  2. Provide the insurance company with the police report.  3. Provide the insurance company with any additional information that may be necessary to process the claim.  4. Wait for the insurance company to contact you regarding the claim. input: {prompt}. output:"
-            result = self.generateText(inputText,generate_params)
-
+            inputPrompt = self.json_config["promptNextSteps"]
+            inputPrompt = inputPrompt.replace("INPUTTEXT",prompt)
+            result = self.generateText(inputPrompt,generate_params)
         except Exception as e:
             print(e)
             result = None
@@ -117,8 +123,9 @@ class Engine:
                 GenParams.MAX_NEW_TOKENS: 25,
                 GenParams.RANDOM_SEED: 1050,
             }
-
-            result = self.generateText(prompt, generate_params)
+            inputPrompt = self.json_config["promptSummary"]
+            inputPrompt = inputPrompt.replace("INPUTTEXT",prompt)
+            result = self.generateText(inputPrompt, generate_params)
         except Exception as e:
             print(e)
             result = None
