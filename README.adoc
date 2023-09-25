@@ -26,7 +26,7 @@ podman run -e MODEL_ID=FLAN_UL2 -e IBM_API_KEY=<your-IBM-cloud-apikey> -e PROJEC
 
 * Go to http://localhost:8080 
 
-For example, IBM_AI_ENDPOINT is https://eu-de.ml.cloud.ibm.com, in case using Franfurt datacenter.
+For example, IBM_AI_ENDPOINT is https://eu-de.ml.cloud.ibm.com, in case using Frankfurt datacenter.
 
 == Modify
 
