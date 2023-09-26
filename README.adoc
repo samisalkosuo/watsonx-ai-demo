@@ -31,3 +31,10 @@ For example, IBM_AI_ENDPOINT is https://eu-de.ml.cloud.ibm.com, in case using Fr
 == Modify
 
 If you need to modify the application, take a look at link:app/config.json[config.json]. This JSON includes all text in the UI as well as data and prompts. Modify them for you own use.
+
+== Demo
+
+Demo may or may not be available at https://sydney.techzone51.net/wxaicardemo/.
+
+.watsonx.ai - Digital Claim Agent
+image::images/watsonxaicardemo.png[watsonx.ai - Digital Claim Agent]
