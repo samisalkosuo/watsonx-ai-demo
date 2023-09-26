@@ -1,4 +1,4 @@
-name: wxoskills container build and push
+name: watsonxaidemo container build and push
 
 on:
   workflow_dispatch:
