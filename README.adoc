@@ -34,7 +34,7 @@ If you need to modify the application, take a look at link:app/config.json[confi
 
 == Demo
 
-Demo may or may not be available at https://sydney.techzone51.net/wxaicardemo/.
+Demo may or may not be available at https://watsonx-ai-demo.17cwl8ne2aem.eu-de.codeengine.appdomain.cloud/.
 
 .watsonx.ai - Digital Claim Agent
 image::images/watsonxaicardemo.png[watsonx.ai - Digital Claim Agent]
