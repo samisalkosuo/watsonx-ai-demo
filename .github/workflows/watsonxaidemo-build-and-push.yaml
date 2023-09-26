@@ -1,0 +1,24 @@
+name: wxoskills container build and push
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev
+    paths-ignore:
+      - '**.adoc'
+      - '**.md'
+      - '.gitignore'
+      - '.github/**'
+      - 'openshift/**'
+      - 'containers/**'
+
+jobs:
+  call-container-build-and-push:
+    uses: ./.github/workflows/reusable-container-build-and-push.yaml
+    with:
+      imagename: kazhar/watsonxaidemo
+      tagname: $GITHUB_REF_NAME
+      dockerfile: Dockerfile
+    secrets: inherit
