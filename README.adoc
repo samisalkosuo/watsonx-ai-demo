@@ -21,7 +21,7 @@ podman build -t watsonx-ai-demo .
 * Start the container:
 
 ```
-podman run -e MODEL_ID=FLAN_UL2 -e IBM_API_KEY=<your-IBM-cloud-apikey> -e PROJECT_ID=<your-project-id> -e IBM_AI_ENDPOINT=<ai-endpoint> -p 8080:8080 wx-demo-car-insurance
+podman run -e MODEL_ID=FLAN_UL2 -e IBM_API_KEY=<your-IBM-cloud-apikey> -e PROJECT_ID=<your-project-id> -e IBM_AI_ENDPOINT=<ai-endpoint> -p 8080:8080 watsonx-ai-demo
 ```
 
 * Go to http://localhost:8080 
