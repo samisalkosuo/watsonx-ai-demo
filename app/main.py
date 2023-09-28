@@ -119,12 +119,12 @@ elif st.session_state.active_page == 1:
             st.session_state.entities = entities
             st.experimental_rerun()
 
-    # with cols[3]:
-    #     if st.button("Get insights"):
-    #         entities, next_steps, summary = st.session_state.engine.query_bam(st.session_state.engine.claims[st.session_state.selected_claim]["description"])
-    #         st.session_state.entities = entities
-    #         st.session_state.next_steps = next_steps
-    #         st.session_state.summary = summary
+    with cols[3]:
+        if st.button(json_config["getInsightsButtonText"]):
+            entities, next_steps, summary = st.session_state.engine.query_bam(st.session_state.engine.claims[st.session_state.selected_claim]["description"])
+            st.session_state.entities = entities
+            st.session_state.next_steps = next_steps
+            st.session_state.summary = summary
 
     if st.session_state.summary is not None:
         st.markdown("<hr>", unsafe_allow_html=True)
