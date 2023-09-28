@@ -5,6 +5,8 @@ IBM watsonx.ai demo application. Based on https://github.ibm.com/Vincent-MP-Neli
 This demo uses IBM Watson Machine Learning library, https://ibm.github.io/watson-machine-learning-sdk/.
 See also https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-python-library for more instructions.
 
+You need also watsonx service, follow these instructions: https://www.ibm.com/docs/en/watsonx-as-a-service?topic=getting-started. 
+
 == Scenario
 
 Demo scenario is fictional Digital Claim Agent application where AI is used to summarize claim text, get the next actions and extract entities.
@@ -26,7 +28,7 @@ podman run -e MODEL_ID=FLAN_UL2 -e IBM_API_KEY=<your-IBM-cloud-apikey> -e PROJEC
 
 * Go to http://localhost:8080 
 
-For example, IBM_AI_ENDPOINT is https://eu-de.ml.cloud.ibm.com, in case using Frankfurt datacenter.
+IBM_AI_ENDPOINT is URL to your watsonx service instance. For example,  https://eu-de.ml.cloud.ibm.com, in case using Frankfurt datacenter.
 
 == Modify
 
