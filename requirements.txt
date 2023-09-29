@@ -1,5 +1,9 @@
+cffi 
+argon2_cffi 
+chardet 
+watchdog
 streamlit
 python-dotenv
 st_clickable_images
 streamlit_extras
-ibm-watson-machine-learning
+ibm-watson-machine-learning    

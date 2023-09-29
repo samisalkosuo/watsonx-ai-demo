@@ -1,9 +1,9 @@
 
 {
     "pageTitle": "Demo: Auto insurance",
-    "headerText": "watsonx.ai- Digital Claim Agent",
+    "headerText": "watsonx.ai - Digital Claim Agent",
     "descriptionText": "AI-driven insurance claim system leveraging foundational models ",
-    "logoImagePath": "app/src/assets/images/auto_logo.png",
+    "logoImagePath": "src/assets/images/auto_logo.png",
     "listHeaderText": "Pick the insurance claim",
     "whyThisAppHeaderText": "Why this application?",
     "whyThisAppDescriptionText": "This dashboard aims at summarizing auto claims descriptions, extract entities and suggest next steps from the data scource using watsonx.ai to reduce claim turn around time, reduce manual intervention, streamline and revolutionize the insurance claim industry.",

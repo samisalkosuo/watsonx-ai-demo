@@ -13,7 +13,7 @@ from ibm_watson_machine_learning.foundation_models.utils.enums import (
 class Engine:
     def __init__(self):
         self._config = Configuration()
-        with open("app/config.json", "r") as file:
+        with open("config.json", "r") as file:
             self.json_config = json.load(file)
         self.claims = self.json_config["inputData"]
 

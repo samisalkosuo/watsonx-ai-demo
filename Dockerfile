@@ -1,17 +1,13 @@
-FROM docker.io/python:3.10-slim
+FROM docker.io/python:3.11-slim
 
 WORKDIR /app
 
-# streamlit-specific commands for config
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8echo 
+ENV DEBUG_PRINT false
 
-# OS Update
-RUN apt-get update --allow-unauthenticated -y && \
-    pip install -U cffi pip setuptools argon2_cffi chardet watchdog streamlit && \
-    pip install --upgrade streamlit-extras && \
-    pip install python-dotenv st-clickable-images && \
-    pip install --no-cache-dir ibm-watson-machine-learning && \
+COPY requirements.txt ./
+RUN pip install -r requirements.txt && \
     mkdir -p /.streamlit && \
     chmod 777 /.streamlit && \
     bash -c 'echo -e "\
@@ -27,8 +23,7 @@ enableWebsocketCompression = false\n\
 
 EXPOSE 8080
 
-ENV DEBUG_PRINT false
+COPY app ./
 
-COPY . ./
-
-CMD ["bash", "/app/start.sh"]
+#CMD ["bash"]
+CMD ["bash", "scripts/start.sh"]

@@ -5,7 +5,7 @@ from st_clickable_images import clickable_images
 from streamlit_extras import add_vertical_space as avs
 import json
 
-with open("app/config.json", "r") as file:
+with open("config.json", "r") as file:
     json_config = json.load(file)
 
 st.set_page_config(
@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 
-with open('app/src/assets/css/app.css')as f:
+with open('src/assets/css/app.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 
 if "engine" not in st.session_state:
@@ -62,7 +62,7 @@ with st.sidebar:
                 st.session_state.summary: str = None
                 st.session_state.next_steps: str = None
                 st.session_state.entities: str = None
-                st.experimental_rerun()
+                st.rerun()
 
 
 with st.expander(json_config["whyThisAppHeaderText"]):
@@ -85,7 +85,7 @@ if st.session_state.active_page == 0:
                 if st.button(st.session_state.engine.claims[claim_idx]["title"]):
                     st.session_state.active_page = 1
                     st.session_state.selected_claim = claim_idx
-                    st.experimental_rerun()
+                    st.rerun()
         st.markdown("<hr>", unsafe_allow_html=True)
 
 
@@ -107,17 +107,17 @@ elif st.session_state.active_page == 1:
         if st.button(json_config["summaryButtonText"]):
             summary = st.session_state.engine.query_summary(st.session_state.engine.claims[st.session_state.selected_claim]["description"])
             st.session_state.summary = summary
-            st.experimental_rerun()
+            st.rerun()
     with cols[1]:
         if st.button(json_config["nextStepsButtonText"]):
             next_steps = st.session_state.engine.query_next_steps(st.session_state.engine.claims[st.session_state.selected_claim]["description"])
             st.session_state.next_steps = next_steps
-            st.experimental_rerun()
+            st.rerun()
     with cols[2]:
         if st.button(json_config["entitiesButtonText"]):
             entities = st.session_state.engine.query_entities(st.session_state.engine.claims[st.session_state.selected_claim]["description"])
             st.session_state.entities = entities
-            st.experimental_rerun()
+            st.rerun()
 
     with cols[3]:
         if st.button(json_config["getInsightsButtonText"]):
@@ -148,6 +148,6 @@ elif st.session_state.active_page == 1:
 
 else: 
     st.session_state.active_page = 0
-    st.experimental_rerun()
+    st.rerun()
 
 
