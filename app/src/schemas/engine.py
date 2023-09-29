@@ -28,9 +28,12 @@ class Engine:
             project_id=self._config.project_id,
         )
         generated_response = model.generate(prompt=prompt)
-        self.__debug_print(f"PROMPT:\n{prompt}")
-        self.__debug_print(f"RESPONSE:\n{generated_response}")
-        self.__debug_print("")
+        self.__debug_print(f"""PROMPT:
+{prompt}")
+RESPONSE:
+{generated_response}
+
+""")
         generatedText = generated_response["results"][0]["generated_text"]
         return generatedText
 
